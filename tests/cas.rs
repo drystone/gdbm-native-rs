@@ -25,16 +25,16 @@ fn api_compare_and_swap() {
             expected,
         }: Test,
     ) -> Result<(), String> {
-        let key = b"key".to_vec();
-        db.remove(&key).map_err(|e| format!("remove: {}", e))?;
+        let key = "key";
+        db.remove(key).map_err(|e| format!("remove: {}", e))?;
 
         if let Some(current) = current {
-            db.insert(key.clone(), current.clone())
+            db.insert(key.to_string(), current)
                 .map_err(|e| format!("insert: {}", e))?;
         }
 
         let result = db
-            .compare_and_swap(key, old, new)
+            .compare_and_swap(key.as_bytes().to_vec(), old, new)
             .map_err(|e| format!("compare_and_swap: {}", e))?;
 
         (result == expected)
