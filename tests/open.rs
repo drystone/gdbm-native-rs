@@ -6,7 +6,7 @@ use gdbm_native::{
     Endian::{Big, Little},
     Magic,
     Offset::{Small, LFS},
-    OpenOptions,
+    OpenOptions, Readable, Writeable,
 };
 use tempfile::NamedTempFile;
 

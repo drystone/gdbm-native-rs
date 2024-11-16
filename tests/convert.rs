@@ -3,7 +3,7 @@ extern crate gdbm_native;
 mod common;
 
 use common::init_tests;
-use gdbm_native::{ConvertOptions, OpenOptions};
+use gdbm_native::{ConvertOptions, OpenOptions, Writeable};
 
 #[test]
 fn api_convert() {

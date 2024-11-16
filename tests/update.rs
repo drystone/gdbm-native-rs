@@ -13,7 +13,7 @@ extern crate gdbm_native;
 mod common;
 
 use common::init_tests;
-use gdbm_native::OpenOptions;
+use gdbm_native::{OpenOptions, Readable, Writeable};
 use std::fs;
 use tempfile::NamedTempFile;
 

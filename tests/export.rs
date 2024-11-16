@@ -15,7 +15,7 @@ mod common;
 use tempfile::NamedTempFile;
 
 use common::init_tests;
-use gdbm_native::{ExportBinMode, OpenOptions};
+use gdbm_native::{ExportBinMode, OpenOptions, Readable, Writeable};
 
 #[test]
 fn api_export_bin() {
